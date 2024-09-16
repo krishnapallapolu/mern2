@@ -1,0 +1,28 @@
+/* NavMenu.module.css */
+
+.navMenu {
+    background-color: #333;
+    padding: 1rem;
+}
+
+.navList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navItem {
+    margin: 0 1rem;
+}
+
+.navItem a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navItem a:hover {
+    text-decoration: underline;
+}
