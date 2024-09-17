@@ -10,10 +10,11 @@ const LoginPage = () => {
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
+        const apiUrl = process.env.BACKEND_APP_URL;
 
         try {
             const response = await axios.post(
-                "http://localhost:5005/api/auth/login",
+                `${apiUrl}api/auth/login`,
                 {
                     email,
                     password,

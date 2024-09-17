@@ -11,7 +11,14 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: ["http://localhost:3000", "https://mern2-m74p.vercel.app/"], // Add your Vercel domain here
+    origin: function (origin, callback) {
+        // Allow requests from specific origins or no origin (Postman, etc.)
+        if (origin === "http://localhost:3000" || origin === "https://mern2-m74p.vercel.app" || !origin) {
+            callback(null, true); // Accept the request
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
 }));
 app.use(express.json());
