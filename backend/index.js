@@ -11,10 +11,9 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: "http://localhost:3000", // Your Next.js frontend URL
+    origin: ["http://localhost:3000", "https://mern2-m74p.vercel.app/"], // Add your Vercel domain here
     methods: ["GET", "POST", "PUT", "DELETE"],
 }));
-
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
